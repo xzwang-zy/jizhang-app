@@ -1,7 +1,6 @@
 {
   "name": "jizhang-app",
   "version": "1.0.0",
-  "description": "轻量化收支记账单应用",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -99,7 +99,7 @@ import {
   DEFAULT_LEDGERS 
 } from '../utils/storage'
 
-const emit = defineEmits(['change', 'update-list'])
+const emit = defineEmits(['change'])
 
 const ledgerList = ref([])
 const currentLedgerId = ref('')
@@ -137,9 +137,6 @@ function loadLedgers() {
 
 function loadCurrentLedger() {
   currentLedgerId.value = getCurrentLedger()
-}
-
-function handleCommand(command) {
 }
 
 function handleSelectLedger(id) {
@@ -193,7 +190,6 @@ function handleEditConfirm(ledger) {
   loadLedgers()
   editingId.value = ''
   ElMessage.success('账本名称修改成功')
-  emit('update-list')
 }
 
 function handleItemDelete(ledger) {
@@ -216,7 +212,6 @@ async function confirmDelete() {
       showDeleteDialog.value = false
       deletingLedgerId.value = ''
       ElMessage.success('账本删除成功')
-      emit('update-list')
     } else {
       ElMessage.warning('无法删除最后一个账本')
     }
@@ -259,7 +254,6 @@ function handleAddConfirm() {
   showAddInput.value = false
   newLedgerName.value = ''
   ElMessage.success('账本添加成功')
-  emit('update-list')
 }
 
 onMounted(() => {

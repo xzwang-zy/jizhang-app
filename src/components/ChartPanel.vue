@@ -79,12 +79,6 @@ function updateChart() {
       itemGap: 12,
       textStyle: {
         fontSize: 11
-      },
-      pageTextStyle: {
-        fontSize: 12
-      },
-      formatter: function(name) {
-        return name
       }
     },
     series: [
